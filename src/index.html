@@ -2,13 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Caesar Cipher</title>
+    <title>Cifrado Cesar</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div id="root">
-      <h1>Hello world!</h1>
+  <body  class="cipher">
+  <div class="contenido1">
+    
+    <div class="contenido1" id="nav">
+      <header>
+    <h1 class="title">Cifrado Cesar</h1>
+    </header>
+       <form action="cipher.js"></form>
+        <ul>
+       <textarea name="msg1" class="msn1" id="msg1" cols="50" rows="10"></textarea>
+       <br>
+       <label >No. de dezplazamiento
+        <input class="desplazamiento" type="number" value="1" min="1" max="1++"></label>
+      <br>
+      <br>
+        <button  id="codificar" class="codificar" type="submit" >CODIFICAR</button>
+        <button id ="decodificar" class="decodificar"type="submit">DECODIFICAR</button>
+       </ul>
+    
     </div>
+
+<div class="msg2" id="msg2">
+<form action="cipher.js"></form>
+<ul>
+  <label for="mensaje2"></label>
+  <textarea name="mensaje2" id="mensajecod" cols="30" rows="10"></textarea>
+  <p>Este es tu mensaje cifrado o descifrado</p>
+  <button type="reset">REGRESAR</button>
+</ul>
+
+
+
+
+</div>
+</div>
     <script src="index.js" type="module"></script>
   </body>
 </html>
