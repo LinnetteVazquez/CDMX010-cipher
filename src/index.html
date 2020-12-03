@@ -3,21 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Cifrado Cesar</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body  class="cipher">
-  <div class="contenido1">
     
-    <div class="contenido1" id="nav">
-      <header>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Diplomata+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Chicle&family=Diplomata+SC&family=IM+Fell+French+Canon+SC&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Chicle&family=Diplomata+SC&family=IM+Fell+French+Canon+SC&family=Text+Me+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Chicle&family=Diplomata+SC&family=IM+Fell+French+Canon+SC&family=Permanent+Marker&family=Text+Me+One&display=swap" rel="stylesheet">
+    
+<link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+  <div class="contenido1">
+
+  <div id="nav">
     <h1 class="title">Cifrado Cesar</h1>
-    </header>
+  
        <form action="cipher.js"></form>
         <ul>
+        <h2 class="i1">Escribe tu mensaje</h2>
        <textarea name="msg1" class="msn1" id="msg1" cols="50" rows="10"></textarea>
        <br>
-       <label >No. de dezplazamiento
-        <input class="desplazamiento" type="number" value="1" min="1" max="1++"></label>
+      <p class="i2">Selecciona el dezplazamiento que desees para descifrar tu mensaje</p> 
+      <input class="desplazamiento" id="desplazamiento" type="number" value="1" min="1" max="25"></label>
       <br>
       <br>
         <button  id="codificar" class="codificar" type="submit" >CODIFICAR</button>
@@ -26,17 +38,13 @@
     
     </div>
 
-<div class="msg2" id="msg2">
+<div id="resultado" class="resultado">
 <form action="cipher.js"></form>
 <ul>
-  <label for="mensaje2"></label>
-  <textarea name="mensaje2" id="mensajecod" cols="30" rows="10"></textarea>
-  <p>Este es tu mensaje cifrado o descifrado</p>
-  <button type="reset">REGRESAR</button>
+  <textarea name="mensaje2" class="msg2" id="msgCoD" cols="30" rows="10"></textarea>
+  <p class="i3">Este es tu nuevo mensaje.</p>
+  <button type="reset" id="regresar" class="regresar">REGRESAR</button>
 </ul>
-
-
-
 
 </div>
 </div>
