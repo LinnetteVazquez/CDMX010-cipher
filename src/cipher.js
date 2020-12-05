@@ -1,6 +1,15 @@
 const cipher = {
- 
+codificar(msg1, desplazamiento) {
+  
+   
 }
+ 
+ 
+
+
+};
+  
+ 
   
 
 /* Formula del cifrado cesar
