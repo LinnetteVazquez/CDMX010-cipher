@@ -2,13 +2,16 @@ const cipher = {
   //funcion que recibe argumentos
   encode(msg1, offset) {
     const textoMayusculas = msg1.toUpperCase();
-    // tipo de daro que va almacenar (string vacio)
+    // cambiar offset de string a numero
+    const desplazamiento = parseInt(offset);
+    // tipo de dato que va almacenar (string vacio)
     let mensajeCifrado = "";
     for (let i = 0; i < textoMayusculas.length; i++) {
       //obteniendo c/letra
       const letra = textoMayusculas[i];
       //si letra es igual a un espacio
       if (letra === " ") {
+        // guarda letra por letra en la misma cadena
         mensajeCifrado += " ";
         //se salta todos los comandos sig. y empieza en la sig. letra.
         continue;
@@ -16,11 +19,11 @@ const cipher = {
       //convirtiendo a num. ASCII
       const asciiValor = letra.charCodeAt();
       //hacer formula, cifra la letra
-      const letraCifrada = ((asciiValor - 65 + offset) % 26) + 65;
-      //prueba de consola
-      console.log({ letra, asciiValor, letraCifrada });
-      //cconvierte numero a letra
+      const letraCifrada = ((asciiValor - 65 + desplazamiento) % 26) + 65;
+      //convierte numero a letra
       mensajeCifrado += String.fromCharCode(letraCifrada);
+      //prueba de consola
+      console.log({ letra, asciiValor, letraCifrada, mensajeCifrado });
     }
     //retorno de la funcion
     return mensajeCifrado;
@@ -28,6 +31,8 @@ const cipher = {
 
   decode(msg1, offset) {
     const textoMayusculas = msg1.toUpperCase();
+    // cambiar offset de string a numero
+    const desplazamiento = parseInt(offset);
     // tipo de daro que va almacenar (string vacio) 1°se define
     let mensajeDescifrado = "";
     for (let i = 0; i < textoMayusculas.length; i++) {
@@ -41,11 +46,11 @@ const cipher = {
       //convirtiendo a num. ASCII
       const asciiValor = letra.charCodeAt();
       //hacer formula, cifra la letra
-      const letraDescifrada = ((asciiValor + 65 - offset) % 26) + 65;
-      //prueba de consola
-      console.log({ letra, asciiValor, letraDescifrada });
+      const letraDescifrada = ((asciiValor + 65 - desplazamiento) % 26) + 65;
       //cconvierte numero a letra 2°se usa
       mensajeDescifrado += String.fromCharCode(letraDescifrada);
+      //prueba de consola
+      console.log({ letra, asciiValor, letraDescifrada, mensajeDescifrado });
     }
     //retorno de la funcion 3°se retorna
     return mensajeDescifrado;

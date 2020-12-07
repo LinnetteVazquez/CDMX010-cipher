@@ -1,28 +1,32 @@
 import cipher from "./cipher.js";
 
-let msg1 = document.getElementById("msg1").value;
-let offset = document.getElementById("offset").value;
-let codificar = document.getElementById("codificar");
-let decodificar = document.getElementById("decodificar");
+let btnCodificar = document.getElementById("codificar");
+let btnDecodificar = document.getElementById("decodificar");
 let hoja1 = document.getElementById("nav");
-let resultado = document.getElementById("resultado");
-let msg2 = document.getElementById("msgCoD").value;
+let hoja2 = document.getElementById("resultado");
+
 let regresar = document.getElementById("regresar");
 
-codificar.addEventListener("click", function () {
-  resultado.classList.remove("resultado");
+btnCodificar.addEventListener("click", function () {
+  hoja2.classList.remove("resultado");
   hoja1.style.display = "none";
+  let msg1 = document.getElementById("msg1").value;
+  let offset = document.getElementById("offset").value;
+  document.getElementById("msgCoD").value = cipher.encode(msg1, offset);
 });
 
-decodificar.addEventListener("click", function () {
-  resultado.classList.remove("resultado");
+btnDecodificar.addEventListener("click", function () {
+  hoja2.classList.remove("resultado");
   hoja1.style.display = "none";
+  let msg1 = document.getElementById("msg1").value;
+  let offset = document.getElementById("offset").value;
+  document.getElementById("msgCoD").value = cipher.decode(msg1, offset);
 });
 
 regresar.addEventListener("click", function () {
-  resultado.classList.add("resultado");
+  hoja2.classList.add("resultado");
   hoja1.style.display = "block";
 });
 
-console.log(cipher.encode("hola mundo desciframe esta palabra", 13));
-console.log(cipher.decode("BYN ZHAQB QRFPVSENZR RFGN CNYNOEN", 13));
+console.log(cipher.encode("hola", 6));
+console.log(cipher.decode("NURG", 6));
