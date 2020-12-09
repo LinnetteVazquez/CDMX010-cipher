@@ -4,7 +4,6 @@ let btnCodificar = document.getElementById("codificar");
 let btnDecodificar = document.getElementById("decodificar");
 let hoja1 = document.getElementById("nav");
 let hoja2 = document.getElementById("resultado");
-
 let regresar = document.getElementById("regresar");
 
 btnCodificar.addEventListener("click", function () {

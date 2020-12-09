@@ -11,7 +11,6 @@ const cipher = {
       const letra = textoMayusculas[i];
       //si letra es igual a un espacio
       if (letra === " ") {
-        // guarda letra por letra en la misma cadena
         mensajeCifrado += " ";
         //se salta todos los comandos sig. y empieza en la sig. letra.
         continue;
@@ -20,7 +19,7 @@ const cipher = {
       const asciiValor = letra.charCodeAt();
       //hacer formula, cifra la letra
       const letraCifrada = ((asciiValor - 65 + desplazamiento) % 26) + 65;
-      //convierte numero a letra
+      //convierte numero a letra, guarda letra por letra en la misma cadena
       mensajeCifrado += String.fromCharCode(letraCifrada);
       //prueba de consola
       console.log({ letra, asciiValor, letraCifrada, mensajeCifrado });
@@ -33,7 +32,7 @@ const cipher = {
     const textoMayusculas = msg1.toUpperCase();
     // cambiar offset de string a numero
     const desplazamiento = parseInt(offset);
-    // tipo de daro que va almacenar (string vacio) 1°se define
+    // tipo de dato que va almacenar (string vacio) 1°se define
     let mensajeDescifrado = "";
     for (let i = 0; i < textoMayusculas.length; i++) {
       //obteniendo c/letra
