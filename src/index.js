@@ -25,6 +25,7 @@ btnDecodificar.addEventListener("click", function () {
 regresar.addEventListener("click", function () {
   hoja2.classList.add("resultado");
   hoja1.style.display = "block";
+  window.location.reload();
 });
 
 console.log(cipher.encode("hola", 6));
