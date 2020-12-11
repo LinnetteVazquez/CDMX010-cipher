@@ -11,7 +11,7 @@ btnCodificar.addEventListener("click", function () {
   hoja1.style.display = "none";
   let msg1 = document.getElementById("msg1").value;
   let offset = document.getElementById("offset").value;
-  document.getElementById("msgCoD").value = cipher.encode(msg1, offset);
+  document.getElementById("msgCoD").value = cipher.encode(offset, msg1);
 });
 
 btnDecodificar.addEventListener("click", function () {
@@ -19,7 +19,7 @@ btnDecodificar.addEventListener("click", function () {
   hoja1.style.display = "none";
   let msg1 = document.getElementById("msg1").value;
   let offset = document.getElementById("offset").value;
-  document.getElementById("msgCoD").value = cipher.decode(msg1, offset);
+  document.getElementById("msgCoD").value = cipher.decode(offset, msg1);
 });
 
 regresar.addEventListener("click", function () {
@@ -27,6 +27,7 @@ regresar.addEventListener("click", function () {
   hoja1.style.display = "block";
   window.location.reload();
 });
-
+/*
 console.log(cipher.encode("hola", 6));
 console.log(cipher.decode("NURG", 6));
+*/
