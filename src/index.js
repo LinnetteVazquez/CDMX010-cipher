@@ -27,7 +27,3 @@ regresar.addEventListener("click", function () {
   hoja1.style.display = "block";
   window.location.reload();
 });
-/*
-console.log(cipher.encode("hola", 6));
-console.log(cipher.decode("NURG", 6));
-*/
